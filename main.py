@@ -98,8 +98,8 @@ class PolishCalculator:
                 else:
                     raise ValueError(f"Unknown operator: {token}")
                 stack.append(result)
-        # if len(stack) != 1:
-        #     raise ValueError("Invalid RPN expression")
+        if len(stack) != 1:
+            raise ValueError("Invalid RPN expression")
         return stack.pop()
 
     def to_reverse_polish_notation(self, expression: str):
